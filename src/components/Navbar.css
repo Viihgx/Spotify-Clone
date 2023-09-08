@@ -1,0 +1,16 @@
+.navbar {
+        background-color: #121212;
+        flex: 1;
+        overflow: auto;
+        border-radius: 1rem;
+        padding: 0 0 0 1.5rem;
+        
+}
+
+.navbar-container {
+    flex: 1;
+    overflow: auto;
+    border-radius: 1rem;
+    padding: 0 0 0 1.5rem;
+    background-color: #121212;
+  }

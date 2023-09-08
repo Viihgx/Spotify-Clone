@@ -1,0 +1,87 @@
+MusicPlayer.css
+.album {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .album img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 20px;
+  }
+  
+  .album-info .album-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 5px;
+  }
+  
+  .album-info .album-author {
+    font-size: 16px;
+    color: #b3b3b3;
+  }
+  
+  .album-controls img {
+    width: 24px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  .player {
+    margin-bottom: 20px;
+  }
+  
+  .player-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  
+  .player-control-icon {
+    width: 24px;
+    margin: 0 10px;
+    cursor: pointer;
+  }
+  
+  .player-control-icon:last-child {
+    opacity: 1;
+    height: 2rem;
+  }
+  
+  .playback-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #b3b3b3;
+    font-size: 12px;
+  }
+  
+  .progress-bar {
+    width: 100%;
+    margin: 0 10px;
+    cursor: pointer;
+  }
+  
+  .controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .control-icons {
+    width: 24px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  .volume-bar {
+    width: 100%;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  
