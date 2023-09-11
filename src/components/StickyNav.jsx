@@ -11,8 +11,12 @@ function StickyNav() {
           </div>
 
           <div className="sticky-nav-options">
-            <div className="divider"/>
+            <div className='faq-nav'>
+              FAQ
+            </div>
             
+            <div className="divider"/>
+
             <button className="badge nav-item hide">Ver planos premium</button>
             <button className="badge nav-item dark-badge"><i className="fa-regular fa-circle-down" style={{marginRight: '0.5rem'}} />Instalar aplicativo</button>
             <a href="./Login/login.html" target="_blank"><i className="fa-regular fa-user nav-item" /></a>

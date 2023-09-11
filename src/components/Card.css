@@ -18,16 +18,22 @@
 .card-container {
   display: flex;
   flex-wrap: wrap;
+  gap: 0.5rem; 
+  padding: 0 1rem;
 }
 
 .cards {
-  background-color: #121212;
+  background: linear-gradient(0deg, rgba(24,24,24,1) 27%, rgba(15,15,15,1) 50%);
   flex: 1;
   flex-basis: 6%; /* Cada coluna ocupa 20% da largura total */
   border-radius: 0.5rem;
   padding: 1rem;
   margin: 1rem 1rem 0 0;
   margin-right: 10px; /* Espaço entre as colunas */
+}
+
+.cards:hover {
+  opacity: 1;
 }
 
 .card-img {
@@ -44,3 +50,4 @@
   font-size: 0.85rem;
   opacity: 0.8;
 }
+
