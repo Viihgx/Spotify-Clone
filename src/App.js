@@ -8,14 +8,9 @@ import Navbar from './components/Navbar';
 
 function App() {
   return (
-    <div className="Main">
+    <div className="main">
       <Sidebar />
       <Navbar/>
-      {/* <div className="main-content"> */}
-        {/* <StickyNav /> */}
-        {/* <Card /> */}
-      {/* </div> */}
-      {/* <MusicPlayer /> */}
     </div>
   );
 }
