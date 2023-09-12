@@ -1,5 +1,7 @@
 import React from 'react';
 import './StickyNav.css';
+// import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
+// import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 
 
 function StickyNav() {
@@ -7,6 +9,9 @@ function StickyNav() {
     <div className="main-content">
         <div className="sticky-nav">
           <div className="sticky-nav-icons">
+
+            {/* <KeyboardArrowLeftIcon/> */}
+
             <img src="./assets/backward_icon.png" alt="backward_icon" />
             <img src="./assets/forward_icon.png" alt="forward_icon" className="hide" />    
           </div>
