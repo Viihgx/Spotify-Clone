@@ -1,7 +1,7 @@
 import React from 'react';
 import './Card.css';
-import TopHits from '../assets/TopHits.jpg';
-import RapCaviar from '../assets/RapCaviar.jpg';
+import TopHits from '../../assets/TopHits.jpg';
+import RapCaviar from '../../assets/RapCaviar.jpg';
 
 function Card() {
     return (

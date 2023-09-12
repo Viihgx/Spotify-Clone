@@ -1,6 +1,7 @@
 import React from 'react';
 import './StickyNav.css';
 
+
 function StickyNav() {
   return (
     <div className="main-content">
