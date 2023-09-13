@@ -2,6 +2,8 @@
 .card {
   background: linear-gradient(0deg, rgba(18,18,18,1) 82%, rgba(35,35,35,1) 99%);
   flex: 1;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .h2 {
@@ -29,11 +31,12 @@
   border-radius: 0.5rem;
   padding: 1rem;
   margin: 1rem 1rem 0 0;
-  margin-right: 10px; /* Espaço entre as colunas */
+  margin-right: 10px; 
+  cursor: pointer;
 }
 
 .cards:hover {
-  opacity: 1;
+  background-color: #fff44f
 }
 
 .card-img {

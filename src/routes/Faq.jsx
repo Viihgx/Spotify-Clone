@@ -1,8 +1,9 @@
 import React from 'react';
+// import SideBar from '../components/SideBar';
 
 function Faq() {
   return <div>
-      <h1>OI</h1>;
+      <h1>Faq</h1>
   </div>
 }
 

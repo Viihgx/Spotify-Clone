@@ -51,7 +51,7 @@ function Card() {
                     </div>
                 </div>
             </div>
-            <h2>
+            <h2 style={{marginTop: "1.8rem" }}>
                 Foco
             </h2>
             <div className="card-container">

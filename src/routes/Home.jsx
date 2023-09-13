@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
-import Sidebar from '../components/SideBar/Sidebar';
-import Navbar from '../components/NavBar/Navbar';
+// import Sidebar from '../components/SideBar/Sidebar';
+// import Navbar from '../components/NavBar/Navbar';
 // import Routes from "./Route/Routes";
 // import Card from './components/Card';
 // import StickyNav from './components/StickyNav';
@@ -10,8 +10,8 @@ import Navbar from '../components/NavBar/Navbar';
 function App() {
   return (
     <div className="main">
-      <Sidebar />
-      <Navbar/>
+      {/* <Sidebar /> */}
+      {/* <Navbar/> */}
       {/* <Routes /> */}
     </div>
   );

@@ -1,24 +1,36 @@
 import React from 'react';
 import './StickyNav.css';
+import { Link } from 'react-router-dom';
+
 // import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
+// import { Grid } from '@mui/material';
 // import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 
+
+// export default function SvgMaterialIcons() {
+//   return ( 
+//   <Grid item xs={2}>
+//     <KeyboardArrowLeftIcon/>
+//   </Grid>
+//   )}
 
 function StickyNav() {
   return (
     <div className="main-content">
         <div className="sticky-nav">
           <div className="sticky-nav-icons">
+      
+          {/* <KeyboardArrowLeftIcon sx={{ marginRight: "10px" }} /> */}
 
-            {/* <KeyboardArrowLeftIcon/> */}
-
-            <img src="./assets/backward_icon.png" alt="backward_icon" />
-            <img src="./assets/forward_icon.png" alt="forward_icon" className="hide" />    
+              
           </div>
 
           <div className="sticky-nav-options">
             <div className='faq-nav'>
-              FAQ
+              <ul>
+              <Link style={{textDecoration: "none", color:"white" }} target="_blank" rel="noopener noreferrer" to='/faq'>FAQ</Link>
+              </ul>
+              
             </div>
             
             <div className="divider"/>
