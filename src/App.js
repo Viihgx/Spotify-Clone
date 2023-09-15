@@ -1,22 +1,22 @@
-import React from 'react';
-import './App.css';
-import Sidebar from './components/SideBar/Sidebar';
-import Navbar from './components/NavBar/Navbar';
-import { Outlet } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
-// import Routes from "./Route/Routes";
-// import Card from './components/Card';
-// import StickyNav from './components/StickyNav';
-// import MusicPlayer from './components/MusicPlayer';
+import { Routes, Route } from 'react-router-dom'
+import Home from './routes/Home';
+import Faq from './routes/Faq';
+// import Sidebar from './components/SideBar/Sidebar';
+import Principal from './components/Principal/Principal';
 
 function App() {
   return (
-    <div className="main">
-      <Sidebar />
-      <Navbar/>
-      <Outlet/>
-      {/* <Routes /> */}
-    </div>
+    <>
+    
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/principal" element={<Principal />} >
+          <Route path="faq" element={<Faq />} />
+        </Route>
+        <Route path="home" element={<Home />} />
+        
+      </Routes>
+    </>
   );
 }
 

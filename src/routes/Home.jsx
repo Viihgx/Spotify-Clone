@@ -1,20 +1,15 @@
 import React from 'react';
 import '../App.css';
-// import Sidebar from '../components/SideBar/Sidebar';
-// import Navbar from '../components/NavBar/Navbar';
-// import Routes from "./Route/Routes";
-// import Card from './components/Card';
-// import StickyNav from './components/StickyNav';
-// import MusicPlayer from './components/MusicPlayer';
+import Sidebar from '../components/SideBar/Sidebar';
+import Navbar from '../components/NavBar/Navbar';
 
-function App() {
+function Home() {
   return (
     <div className="main">
-      {/* <Sidebar /> */}
-      {/* <Navbar/> */}
-      {/* <Routes /> */}
+      <Sidebar />
+      <Navbar/>
     </div>
   );
 }
 
-export default App;
+export default Home;
