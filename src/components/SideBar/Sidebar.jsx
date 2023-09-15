@@ -3,10 +3,12 @@ import './Sidebar.css';
 import Library from '../Library/Library';
 import { GoHome } from 'react-icons/go';
 import { CiSearch } from 'react-icons/ci';
+import { Grid } from '@mui/material';
 
 function Sidebar() {
   return (
     <div className="sidebar">
+      <Grid className='sidebar-box'> 
       <div className="nav">
         <div className="items-option" style={{display: 'flex', alignItems: 'center' }}>
           <GoHome style={{ marginRight: '19px', fontSize: '26px', fill: 'grey', verticalAlign: 'middle' }} />
@@ -23,6 +25,7 @@ function Sidebar() {
         </div>
       </div>
       <Library /> 
+      </Grid>
     </div>
   );
 }

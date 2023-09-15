@@ -1,6 +1,13 @@
+.main-content {
+    position: relative;
+    width: 64%;
+}
+
 .sticky-nav{
-    position: sticky;
-    top: 0;
+    width: 76%;
+    position: fixed;
+    /* top: 0; */
+    border-radius: 0.5rem 0 0 0;
     background-color: #242424;
     display: flex;
     justify-content: space-between;
@@ -25,8 +32,6 @@
     height: 1.5rem;
     background-color: aliceblue;
 }
-
-
 
 .faq-nav {
     font-size: 1rem;

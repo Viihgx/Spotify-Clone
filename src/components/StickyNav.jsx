@@ -6,8 +6,6 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import Button from '@mui/material/Button';
 import ArrowCircleDownIcon from '@mui/icons-material/ArrowCircleDown';
 
-
-
 function StickyNav() {
   return (
     <div className="main-content">
