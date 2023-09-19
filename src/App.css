@@ -4,8 +4,10 @@ body {
   background-color: #000;
   color: #fff;
   overflow: hidden;
+  /* scrollbar-width: none; */
+  /* -ms-overflow-style: none; */
   
-  /* overflow: hidden; */
+
   /* display: flex; */
   
 }

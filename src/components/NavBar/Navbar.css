@@ -9,6 +9,10 @@
              
 }
 
+.navbar::-webkit-scrollbar {
+        display: none;
+      }
+
 .navbar-container {
     flex: 1;
     /* overflow: auto; */
