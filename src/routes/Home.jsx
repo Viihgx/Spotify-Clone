@@ -1,13 +1,15 @@
 import React from 'react';
 import '../App.css';
 import Sidebar from '../components/SideBar/Sidebar';
-import Navbar from '../components/NavBar/Navbar';
+import SongList from '../components/SongList/SongList';
+// import StickyNav from '../components/Navbar';
 
 function Home() {
   return (
     <div className="main">
+      
       <Sidebar />
-      <Navbar/>
+      <SongList/>
     </div>
   );
 }

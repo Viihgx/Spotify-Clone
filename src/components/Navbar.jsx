@@ -1,5 +1,5 @@
 import React from 'react';
-import './StickyNav.css';
+import './Navbar.css';
 import { Link } from 'react-router-dom';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';

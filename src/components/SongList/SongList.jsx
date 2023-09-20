@@ -1,15 +1,15 @@
 import React from 'react';
-import StickyNav from '../StickyNav';
+import Navbar from '../Navbar';
 import Card from '../Card/Card';
-import './Navbar.css'
+import './SongList.css'
 
-function Navbar() {
+function SongList() {
   return (
     <div className="navbar">
-        <StickyNav />
+        <Navbar />
         <Card/>
     </div>
   );
 }
 
-export default Navbar;
+export default SongList;
