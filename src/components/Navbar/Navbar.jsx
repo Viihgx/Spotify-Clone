@@ -27,7 +27,7 @@ function Navbar() {
           <Link
             to="/principal/faq"
             style={{ textDecoration: 'none', textTransform: 'none', color: 'white' }}
-            target="_blank"
+     
             rel="noopener noreferrer"
           >
             FAQ
