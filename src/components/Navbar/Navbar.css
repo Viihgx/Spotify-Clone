@@ -1,13 +1,13 @@
-.main-content {
+/* .main-content {
     position: relative;
     width: 64%;
 }
 
 .Navbar{
     width: 75%;
-    position: fixed;
+    position: fixed; */
     /* top: 0; */
-    border-radius: 0.5rem 0 0 0;
+    /* border-radius: 0.5rem 0 0 0;
     background-color: #242424;
     display: flex;
     justify-content: space-between;
@@ -37,4 +37,4 @@
     font-size: 1rem;
     margin-left: 1rem;
     font-weight: 600;
-}
+} */

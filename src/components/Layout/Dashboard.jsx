@@ -7,8 +7,8 @@ const Dashboard = (WrappedComponent) => {
     return function(props) {
         return ( 
             <div style={{
-                // display: 'flex', 
-//   flexDirection: 'row',
+                display: 'flex', 
+  flexDirection: 'row',
   height: '100vh',
             }}>
                 <Sidebar/>
