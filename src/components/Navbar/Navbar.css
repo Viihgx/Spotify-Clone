@@ -3,7 +3,7 @@
     width: 64%;
 }
 
-.sticky-nav{
+.Navbar{
     width: 75%;
     position: fixed;
     /* top: 0; */
@@ -17,10 +17,10 @@
     height: 2.5rem;
 
 }
-.sticky-nav-icons{
+.Navbar-icons{
     margin-left: 0.75rem;
 }
-.sticky-nav-options{
+.Navbar-options{
      display: flex;
      justify-content: center;
      align-items: center;

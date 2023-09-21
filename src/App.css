@@ -3,7 +3,11 @@ body {
   /* margin: 0; */
   background-color: #000;
   color: #fff;
-  overflow: hidden;
+  padding: 8px;
+  /* overflow: hidden; */
+
+
+
   /* scrollbar-width: none; */
   /* -ms-overflow-style: none; */
   
@@ -20,11 +24,11 @@ body {
   padding: 0 0 0 1.5rem;
 } */
 
-.main {
+/* .main {
   display: flex;
-  flex-direction: row;
+  flex-direction: row; */
 
   
   /* height: 100vh;
   padding: 0.5rem; */
-}
+

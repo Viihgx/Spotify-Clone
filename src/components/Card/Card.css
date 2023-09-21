@@ -5,6 +5,7 @@
   padding-left: 1rem;
   padding-right: 1rem;
   margin-top: 69px;
+  z-index: 1;
   /* scrollbar-width: none;
   -ms-overflow-style: none; */
 }

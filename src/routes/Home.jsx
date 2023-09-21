@@ -1,17 +1,15 @@
 import React from 'react';
 import '../App.css';
-import Sidebar from '../components/SideBar/Sidebar';
+import Dashboard from '../components/Layout/Dashboard';
 import SongList from '../components/SongList/SongList';
-// import StickyNav from '../components/Navbar';
+
 
 function Home() {
   return (
-    <div className="main">
-      
-      <Sidebar />
+    <div style={{ display: 'flex', flex: '1', flexDirection: 'row', zIndex: '1 ', width: 'calc(100% - 340px)'}} className="main">
       <SongList/>
     </div>
   );
 }
 
-export default Home;
+export default Dashboard(Home);
