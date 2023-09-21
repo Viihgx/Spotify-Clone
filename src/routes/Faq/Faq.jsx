@@ -24,13 +24,22 @@ function Faq() {
           
         }}
       >
-        <Typography variant="h4" gutterBottom>
+        <Typography style={{textAlign: 'center'}} variant="h4" gutterBottom>
+          FAQs
+        </Typography>
+
+        <Typography style={{marginBottom: '20px'}} variant="h5" gutterBottom>
           Perguntas Frequentes
         </Typography>
 
+        {/* Inicio do accordion  */}
         <Accordion
-          sx={{ backgroundColor: "#242424", color: "#fff" }} 
+          sx={{
+            backgroundColor: "rgba(36, 36, 36, 0.9)", 
+            color: "#fff"
+          }}
         >
+          {/* Cabeçalho do accordion = AccordionSummary */}
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls="faq-content-1"

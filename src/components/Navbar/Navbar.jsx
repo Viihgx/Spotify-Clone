@@ -2,31 +2,56 @@ import React from 'react';
 import { AppBar, Toolbar, IconButton, Button, Box } from '@mui/material';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowCircleDownIcon from '@mui/icons-material/ArrowCircleDown';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+
 
 function Navbar() {
+  const navigate = useNavigate();
+
+  const handleGoBack = () => {
+    navigate(-1); // Navegue de volta para a página anterior
+  };
+
   return (
     <AppBar position="fixed" sx={{display: 'flex', width: '74%', marginLeft: 'auto', marginTop: '14px', right: 0, borderRadius: '8px 8px 0 0' ,backgroundColor: '#121212', zIndex: '100'}}>
       <Toolbar>
         <IconButton
           size="small"
+          onClick={handleGoBack}
           sx={{
             borderRadius: '50px',
-            backgroundColor: '#131313',
+            backgroundColor: '#0A0A0A',
             color: 'white',
             fontSize: '0.85rem',
             fontWeight: 'bold',
-            marginRight: '1rem',
+            marginRight: '0.5rem',
+            alignItems: 'center',
           }}
         >
           <ArrowBackIosIcon sx={{ fontSize: '1.3rem', fill: '#808080' }} />
         </IconButton>
 
+        <IconButton
+          size="small"
+          sx={{
+            borderRadius: '50px',
+            backgroundColor: '#0A0A0A',
+            color: 'white',
+            fontSize: '0.85rem',
+            fontWeight: 'bold',
+            marginRight: '1rem',
+            alignItems: 'center',
+          }}
+        >
+          <ArrowForwardIosIcon sx={{ fontSize: '1.3rem', fill: '#808080' }} />
+        </IconButton>
+
         <Box flexGrow={1} sx={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
           <Link
-            to="/principal/faq"
-            style={{ textDecoration: 'none', textTransform: 'none', color: 'white' }}
+            to="/faq"
+            style={{ textDecoration: 'none', textTransform: 'none', color: 'white', marginLeft: '10px' }}
      
             rel="noopener noreferrer"
           >
@@ -45,7 +70,7 @@ function Navbar() {
               fontSize: '0.85rem',
               fontWeight: 'bold',
               textTransform: 'none',
-              marginLeft: '35rem',
+              marginLeft: '32rem',
               '&:hover': {
                 backgroundColor: 'white',
                 transform: 'scale(1.05)',
