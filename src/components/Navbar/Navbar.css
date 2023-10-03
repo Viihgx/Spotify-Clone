@@ -1,40 +1,24 @@
-/* .main-content {
-    position: relative;
-    width: 64%;
+/* .navbar {
+    background-color: #5bce25;
+    padding: 10px;
 }
 
-.Navbar{
-    width: 75%;
-    position: fixed; */
-    /* top: 0; */
-    /* border-radius: 0.5rem 0 0 0;
-    background-color: #242424;
+.navbar-items {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 1rem 0 1rem 0;
-    z-index: 10;
-    height: 2.5rem;
-
-}
-.Navbar-icons{
-    margin-left: 0.75rem;
-}
-.Navbar-options{
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     gap: 1rem;
 }
 
-.divider {
-    width: 1px;
-    height: 1.5rem;
-    background-color: aliceblue;
+.nav-btn {
+    background-color: #0A0A0A;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    align-items: center;
 }
 
-.faq-nav {
-    font-size: 1rem;
-    margin-left: 1rem;
-    font-weight: 600;
-} */
+.css-1tk1bks-MuiDivider-root > .divider {
+    border-width: 1px;
+    margin: 10px;
+    background-color: #000000;
+  } */

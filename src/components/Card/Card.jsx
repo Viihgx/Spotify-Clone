@@ -3,13 +3,26 @@ import './Card.css';
 import TopHits from '../../assets/TopHits.jpg';
 import RapCaviar from '../../assets/RapCaviar.jpg';
 
-function Card() {
+function Card(props) {
+    console.log(props.arrayPlaylist)
     return (
         <div className="card">
             <h2>
                 Playlist do Spotify
             </h2>
             <div className="card-container">
+                {props.arrayPlaylist.map((item) => {
+                    return(
+                        <div key={item.id} className="cards">
+                        {/* image #1 */}
+                        <img src={item.thumb} alt="Top Hits" className="card-img" />
+                        <div className="card-title">{item.title}</div>
+                        <div className="card-info">
+{item.description}
+                        </div>
+                    </div>
+                    )
+                })} 
                 <div className="cards">
                     {/* image #1 */}
                     <img src={TopHits} alt="Top Hits" className="card-img" />
