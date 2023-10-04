@@ -14,7 +14,7 @@ function Navbar() {
   };
 
   return (
-    <AppBar position="fixed" sx={{display: 'flex', width: '74%', marginLeft: 'auto', marginTop: '14px', right: 0, borderRadius: '8px 8px 0 0' , backgroundColor: '#121212', zIndex: '100'}}>
+    <AppBar position="fixed" sx={{display: 'flex', width: '74%', marginLeft: 'auto', marginTop: '14px', right: 0, borderRadius: '8px 8px 0 0' , backgroundColor: '#121212', zIndex: '1000'}}>
       <Toolbar>
         <IconButton
           size="small"

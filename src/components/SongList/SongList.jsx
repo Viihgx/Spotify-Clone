@@ -1,25 +1,34 @@
 import React from 'react';
 import Card from '../Card/Card';
-import './SongList.css'
+//import './SongList.css';
+import { Box, Grid, Paper } from '@mui/material'; // Certifique-se de importar Paper para representar os itens Grid.
 
 const mockPlaylists = [
   {
     id: 1,
     thumb: "https://icongresso-x.s3-sa-east-1.amazonaws.com/demo/activity-scheduling/169635083171365.jpeg",
-    title:"Playlist 0",
+    title: "Playlist 0",
     description: "Descrição Playlist 0",
-    songs:[
-      {id:'song-1',title:'song one'},
-      {id:'song-2',title:'song two'}]
-      },
+    songs: [
+      { id: 'song-1', title: 'song one' },
+      { id: 'song-2', title: 'song two' }
+    ]
+  },
+];
 
-] 
 function SongList() {
   return (
-    <div className="Songlist">
-        <Card arrayPlaylist = {mockPlaylists} />
-    </div>
+    <Box>
+      <Grid container spacing={2}>
+      <Grid item xs={12} sm={8} md={8} lg={12}>
+
+            <Paper sx={{background: '#121212'}}>
+              <Card arrayPlaylist = {mockPlaylists} />
+            </Paper>
+          </Grid>
+      </Grid>
+    </Box>
   );
-}   
+}
 
 export default SongList;

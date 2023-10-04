@@ -1,161 +1,154 @@
 import React from 'react';
 import './Card.css';
-import TopHits from '../../assets/TopHits.jpg';
-import RapCaviar from '../../assets/RapCaviar.jpg';
+import { Card, CardContent, CardMedia, Typography, Box } from '@mui/material';
+import { Link } from 'react-router-dom';
 
-function Card(props) {
-    console.log(props.arrayPlaylist)
-    return (
-        <div className="card">
-            <h2>
-                Playlist do Spotify
-            </h2>
-            <div className="card-container">
-                {props.arrayPlaylist.map((item) => {
-                    return(
-                        <div key={item.id} className="cards">
-                        {/* image #1 */}
-                        <img src={item.thumb} alt="Top Hits" className="card-img" />
-                        <div className="card-title">{item.title}</div>
-                        <div className="card-info">
-{item.description}
-                        </div>
-                    </div>
-                    )
-                })} 
-                <div className="cards">
-                    {/* image #1 */}
-                    <img src={TopHits} alt="Top Hits" className="card-img" />
-                    <div className="card-title">Today's Top Hits</div>
-                    <div className="card-info">
-                        Nicki Minaj & Ice Spice are on top of the Hottest 50!
-                    </div>
-                </div>
-                <div className="cards">
-                    {/* image #2 */}
-                    <img src={RapCaviar} alt="Top Hits" className="card-img" />
-                    <div className="card-title">Today's Top Hits</div>
-                    <div className="card-info">
-                        Nicki Minaj & Ice Spice are on top of the Hottest 50!
-                    </div>
-                </div>
-                <div className="cards">
-                    {/* image #2 */}
-                    <img src={RapCaviar} alt="Top Hits" className="card-img" />
-                    <div className="card-title">Today's Top Hits</div>
-                    <div className="card-info">
-                        Nicki Minaj & Ice Spice are on top of the Hottest 50!
-                    </div>
-                </div>
-                <div className="cards">
-                    {/* image #2 */}
-                    <img src={RapCaviar} alt="Top Hits" className="card-img" />
-                    <div className="card-title">Today's Top Hits</div>
-                    <div className="card-info">
-                        Nicki Minaj & Ice Spice are on top of the Hottest 50!
-                    </div>
-                </div>
-                <div className="cards">
-                    {/* image #2 */}
-                    <img src={RapCaviar} alt="Top Hits" className="card-img" />
-                    <div className="card-title">Today's Top Hits</div>
-                    <div className="card-info">
-                        Nicki Minaj & Ice Spice are on top of the Hottest 50!
-                    </div>
-                </div>
-            </div>
-            <h2 style={{marginTop: "1.8rem" }}>
-                Foco
-            </h2>
-            <div className="card-container">
-                <div className="cards">
-                        {/* image #1 */}
-                        <img src={TopHits} alt="Top Hits" className="card-img" />
-                        <div className="card-title">Today's Top Hits</div>
-                        <div className="card-info">
-                            Nicki Minaj & Ice Spice are on top of the Hottest 50!
-                        </div>
-                    </div>
-                    <div className="cards">
-                        {/* image #2 */}
-                        <img src={RapCaviar} alt="Top Hits" className="card-img" />
-                        <div className="card-title">Today's Top Hits</div>
-                        <div className="card-info">
-                            Nicki Minaj & Ice Spice are on top of the Hottest 50!
-                        </div>
-                    </div>
-                    <div className="cards">
-                        {/* image #2 */}
-                        <img src={RapCaviar} alt="Top Hits" className="card-img" />
-                        <div className="card-title">Today's Top Hits</div>
-                        <div className="card-info">
-                            Nicki Minaj & Ice Spice are on top of the Hottest 50!
-                        </div>
-                    </div>
-                    <div className="cards">
-                        {/* image #2 */}
-                        <img src={RapCaviar} alt="Top Hits" className="card-img" />
-                        <div className="card-title">Today's Top Hits</div>
-                        <div className="card-info">
-                            Nicki Minaj & Ice Spice are on top of the Hottest 50!
-                        </div>
-                    </div>
-                    <div className="cards">
-                        {/* image #2 */}
-                        <img src={RapCaviar} alt="Top Hits" className="card-img" />
-                        <div className="card-title">Today's Top Hits</div>
-                        <div className="card-info">
-                            Nicki Minaj & Ice Spice are on top of the Hottest 50!
-                        </div>
-                    </div>
-                </div>
-            <h2 style={{marginTop: "1.8rem" }}>
-                Foco
-            </h2>
-            <div className="card-container">
-                <div className="cards">
-                        {/* image #1 */}
-                        <img src={TopHits} alt="Top Hits" className="card-img" />
-                        <div className="card-title">Today's Top Hits</div>
-                        <div className="card-info">
-                            Nicki Minaj & Ice Spice are on top of the Hottest 50!
-                        </div>
-                    </div>
-                    <div className="cards">
-                        {/* image #2 */}
-                        <img src={RapCaviar} alt="Top Hits" className="card-img" />
-                        <div className="card-title">Today's Top Hits</div>
-                        <div className="card-info">
-                            Nicki Minaj & Ice Spice are on top of the Hottest 50!
-                        </div>
-                    </div>
-                    <div className="cards">
-                        {/* image #2 */}
-                        <img src={RapCaviar} alt="Top Hits" className="card-img" />
-                        <div className="card-title">Today's Top Hits</div>
-                        <div className="card-info">
-                            Nicki Minaj & Ice Spice are on top of the Hottest 50!
-                        </div>
-                    </div>
-                    <div className="cards">
-                        {/* image #2 */}
-                        <img src={RapCaviar} alt="Top Hits" className="card-img" />
-                        <div className="card-title">Today's Top Hits</div>
-                        <div className="card-info">
-                            Nicki Minaj & Ice Spice are on top of the Hottest 50!
-                        </div>
-                    </div>
-                    <div className="cards">
-                        {/* image #2 */}
-                        <img src={RapCaviar} alt="Top Hits" className="card-img" />
-                        <div className="card-title">Today's Top Hits</div>
-                        <div className="card-info">
-                            Nicki Minaj & Ice Spice are on top of the Hottest 50!
-                        </div>
-                    </div>
-                </div>
-        </div>
-    );
+const cardContainerStyle = {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    padding: "8px",
+    width: "180px",
+    height: "250px",
+    borderRadius: "8px",
+    background: "#181818",
+    boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)",
+    cursor: "pointer",
+    justifyContent: "center",
+  };
+
+  const imageContainerStyle = {
+    width: "100%",
+    height: "70%",
+    marginBottom: "8px",
+    borderRadius: "8px",
+    overflow: "hidden",
+    position: "relative",
+  };
+  
+  const imageStyle = {
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+  };
+
+function CardComponent({ img, title, description }) {
+  return (
+    <Card className="cards"  style={cardContainerStyle}>
+      <Link to="/playlist">
+        <Box style={imageContainerStyle}>
+        <CardMedia component="img" src={img} alt="Top Hits" className="card-img" style={imageStyle}/>
+        </Box>
+        
+          <Typography variant="h6" className="card-title">
+            {title}
+          </Typography>
+          <Typography variant="body2" className="card-info">
+            {description}
+          </Typography>
+    
+      </Link>
+    </Card>
+
+  );
 }
 
-export default Card;
+function CardList(props) {
+  return (
+    <div className='card'>
+      <Typography className="playlists-name">Playlist do Spotify</Typography>
+
+      <div className="card-container">
+        {props.arrayPlaylist.map((item) => (
+          <CardComponent
+            key={item.id}
+            img={item.thumb}
+            title={item.title}
+            description={item.description}
+          />
+        ))}
+        {props.arrayPlaylist.map((item) => (
+          <CardComponent
+            key={item.id}
+            img={item.thumb}
+            title={item.title}
+            description={item.description}
+          />
+        ))}
+        {props.arrayPlaylist.map((item) => (
+          <CardComponent
+            key={item.id}
+            img={item.thumb}
+            title={item.title}
+            description={item.description}
+          />
+        ))}
+        {props.arrayPlaylist.map((item) => (
+          <CardComponent
+            key={item.id}
+            img={item.thumb}
+            title={item.title}
+            description={item.description}
+          />
+        ))}
+        {props.arrayPlaylist.map((item) => (
+          <CardComponent
+            key={item.id}
+            img={item.thumb}
+            title={item.title}
+            description={item.description}
+          />
+        ))}
+      </div>
+
+      <Typography className="playlists-name">Playlist do Spotify</Typography>
+      
+      <div className="card-container">
+        {props.arrayPlaylist.map((item) => (
+          <CardComponent
+            key={item.id}
+            img={item.thumb}
+            title={item.title}
+            description={item.description}
+          />
+        ))}
+        {props.arrayPlaylist.map((item) => (
+          <CardComponent
+            key={item.id}
+            img={item.thumb}
+            title={item.title}
+            description={item.description}
+          />
+        ))}
+        {props.arrayPlaylist.map((item) => (
+          <CardComponent
+            key={item.id}
+            img={item.thumb}
+            title={item.title}
+            description={item.description}
+          />
+        ))}
+        {props.arrayPlaylist.map((item) => (
+          <CardComponent
+            key={item.id}
+            img={item.thumb}
+            title={item.title}
+            description={item.description}
+          />
+        ))}
+        {props.arrayPlaylist.map((item) => (
+          <CardComponent
+            key={item.id}
+            img={item.thumb}
+            title={item.title}
+            description={item.description}
+          />
+        ))}
+      </div>
+
+      {/* Resto do seu código */}
+    </div>
+  );
+}
+
+export default CardList;
