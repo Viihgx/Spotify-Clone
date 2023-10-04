@@ -1,6 +1,6 @@
 import React from 'react';
 import './Card.css';
-import { Card, CardContent, CardMedia, Typography, Box } from '@mui/material';
+import { Card, CardMedia, Typography, Box } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 const cardContainerStyle = {

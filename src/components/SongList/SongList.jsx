@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from '../Card/Card';
 //import './SongList.css';
-import { Box, Grid, Paper } from '@mui/material'; // Certifique-se de importar Paper para representar os itens Grid.
+import { Box, Grid } from '@mui/material'; 
 
 const mockPlaylists = [
   {
