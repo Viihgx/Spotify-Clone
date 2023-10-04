@@ -32,6 +32,11 @@ const cardContainerStyle = {
     objectFit: "cover",
   };
 
+  const titlePlaylistsStyle = {
+    fontWeight: "600",
+    margin: "1rem 0 1rem 0",
+  };
+
 function CardComponent({ img, title, description }) {
   return (
     <Card className="cards"  style={cardContainerStyle}>
@@ -56,7 +61,7 @@ function CardComponent({ img, title, description }) {
 function CardList(props) {
   return (
     <div className='card'>
-      <Typography className="playlists-name">Playlist do Spotify</Typography>
+      <Typography variant="h5" style={titlePlaylistsStyle} className="playlists-name">Músicas novinhas em folha</Typography>
 
       <div className="card-container">
         {props.arrayPlaylist.map((item) => (
@@ -101,7 +106,7 @@ function CardList(props) {
         ))}
       </div>
 
-      <Typography className="playlists-name">Playlist do Spotify</Typography>
+      <Typography variant="h5" style={titlePlaylistsStyle} className="playlists-name">Playlist do Spotify</Typography>
       
       <div className="card-container">
         {props.arrayPlaylist.map((item) => (

@@ -16,7 +16,7 @@ function Home() {
       marginTop: "60px",
       height: "100vh",
       width: { sm: `calc(100% - 310px)`, flexShrink: { sm: 0 } },
-      zIndex: "1",
+      zIndex: "0",
       marginLeft: "379px",
       flexDirection: 'row',
     }} >

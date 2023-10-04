@@ -21,10 +21,7 @@ function SongList() {
     <Box>
       <Grid container spacing={2}>
       <Grid item xs={12} sm={8} md={8} lg={12}>
-
-            <Paper sx={{background: '#121212'}}>
               <Card arrayPlaylist = {mockPlaylists} />
-            </Paper>
           </Grid>
       </Grid>
     </Box>
