@@ -13,6 +13,7 @@ const songs = [
     thumb: "https://icongresso-x.s3-sa-east-1.amazonaws.com/demo/activity-scheduling/169635083171365.jpeg",
     title: 'Stargir Interlude',
     artist: 'Artista 1',
+    album: 'Starboy',
     duration: '3:45',
     audioUrl: Music1,
   },
@@ -21,6 +22,7 @@ const songs = [
     thumb: "https://icongresso-x.s3-sa-east-1.amazonaws.com/demo/activity-scheduling/169635083171365.jpeg",
     title: 'Música 2',
     artist: 'Artista 2',
+    album: 'Starboy',
     duration: '4:20',
     audioUrl: Music1,
   },
@@ -30,6 +32,10 @@ const ImageStyles = {
   width: '50px', 
   height: '50px', 
   marginRight: '16px',
+};
+
+const Typography2Styles = {
+  color: '#B3B3B3',
 };
 
 function Playlist(props) {
@@ -72,12 +78,28 @@ function Playlist(props) {
         </Typography>
         </Box>
 
-      <Box sx={{background: "#121212"}}>
+      <Box>
       <Grid container spacing={2}>
         <Grid item xs={12} md={6}>
-          <Typography sx={{ mt: 4, mb: 2 }} variant="h6" component="div">
-            Avatar with text
-          </Typography>
+
+          <Grid container maxWidth="sm" columnSpacing={{ xs: 1, sm: 2, md: 3 }} >
+            <Grid item xs={8}>
+            <Typography sx={{ mt: 4, mb: 2 }} variant="h6" component="div">
+              #  Título
+            </Typography>
+            </Grid>
+            <Grid item xs={2}>
+            <Typography sx={{ mt: 4, mb: 2 }} variant="h6" component="div">
+          
+            </Typography>
+            </Grid>
+            <Grid item xs={2}>
+            <Typography style={Typography2Styles} sx={{ mt: 4, mb: 2 }} variant="h6" component="div">
+              Álbum
+            </Typography>
+            </Grid>
+        </Grid>
+
           <Divider />
               {songs.map((song) => (
           <List key={song.id}>
@@ -95,32 +117,13 @@ function Playlist(props) {
                   </React.Fragment>
                 }
                 />
+                <Typography>{song.album}</Typography>
             </ListItem>
           </List>
                 ))}
         </Grid>
       </Grid>
-      </Box>
-   
-
-
-
-        <ul style={{ listStyleType: 'none', padding: 0 }}>
-          {songs.map((song) => (
-            <li key={song.id} style={{ marginBottom: '10px' }}>
-              <PlayArrowIcon onClick={() => handlePlay(song)}/>
-              <div style={{ display: 'flex', alignItems: 'center' }}>
-                <img src={song.img} alt={song.title} style={{ width: '50px', height: '50px', marginRight: '10px' }} />
-                <div>
-                  <span style={{ fontWeight: 'bold' }}>{song.title}</span>
-                  <br />
-                  <span>{song.artist}</span>
-                </div>
-              </div>
-            </li>
-          ))}
-        </ul>
-        {currentSong && (
+      {currentSong && (
           <AudioPlayer
             src={currentSong.audioUrl}
             autoPlay
@@ -128,6 +131,11 @@ function Playlist(props) {
             onEnded={() => setCurrentSong(null)}
           />
         )}
+      </Box>
+   
+
+
+        
       </Box>
     </Box>
   </Box>
