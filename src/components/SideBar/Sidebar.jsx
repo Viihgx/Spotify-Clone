@@ -29,7 +29,7 @@ const Sidebar = () => {
             <p> Início </p>
           </Link>
         </Link>
-        <Link
+        <Link to="/SeachBar"
           style={{
             display: "flex",
             alignItems: "center",

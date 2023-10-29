@@ -1,0 +1,36 @@
+.box-container {
+    background: linear-gradient(0deg, rgba(18,18,18,1) 7%, rgba(233,20,41,1) 100%);
+    padding: 20px;
+    margin-top: 60px;
+    height: 100vh;
+    width: 100%;
+    z-index: 0;
+    margin-left: 379px;
+}
+
+.table-header {
+    border-bottom: 0.5px solid #b0adad;
+    width: 97%;
+    display: flex;
+    padding: 10px 20px;
+    color: #b0adad;
+    font-weight: bold;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.table-music {
+    width: 97%;
+    display: flex;
+    padding: 10px 20px;
+    color: #b0adad;
+    font-weight: bold;
+    justify-content: space-between;
+    flex-direction: row
+}
+
+.music-img {
+    width: 40px;
+    height: 40px;
+    margin-right: 16px;
+}

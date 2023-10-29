@@ -20,9 +20,9 @@ function SongList() {
   return (
     <Box>
       <Grid container spacing={2}>
-      <Grid item xs={12} sm={8} md={8} lg={12}>
-              <Card arrayPlaylist = {mockPlaylists} />
-          </Grid>
+        <Grid item xs={12} sm={8} md={8} lg={12}>
+          <Card arrayPlaylist = {mockPlaylists} />
+        </Grid>
       </Grid>
     </Box>
   );
