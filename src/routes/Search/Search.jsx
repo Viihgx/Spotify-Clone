@@ -1,42 +1,45 @@
-import React, { useState, useEffect } from 'react';
-import { Box, TextField, Button } from '@mui/material';
+import React, { useState } from 'react';
+import axios from 'axios';
+import ReactAudioPlayer from 'react-audio-player';
+import { Box, TextField, Button, List, ListItem, ListItemText } from '@mui/material';
 import Dashboard from '../../components/Layout/Dashboard';
 
-function Search() {
+const Search = () => {
   const [query, setQuery] = useState('');
-  const [searchResults, setSearchResults] = useState([]);
-  const [error, setError] = useState(null);
+  const [results, setResults] = useState([]);
+  const [audioUrl, setAudioUrl] = useState('');
 
-  const searchMusic = async () => {
+  const handleSearch = async () => {
     try {
-      const response = await fetch(`http://localhost:3004/search?query=${query}`);
-      if (response.ok) {
-        const data = await response.json();
-        setSearchResults(data);
-      } else {
-        setError('Erro ao buscar músicas. Por favor, tente novamente mais tarde.');
+      const response = await axios.get('http://localhost:3004/search', {
+        params: { query },
+      });
+      if (response.status === 200) {
+        setResults(response.data);
       }
     } catch (error) {
-      setError('Erro de rede. Verifique sua conexão ou tente novamente mais tarde.');
+      console.error('Erro na pesquisa de músicas', error);
     }
   };
 
-  useEffect(() => {
-    setError(null); // Limpa o erro quando o usuário digita uma nova consulta.
-  }, [query]);
+  const playAudio = (url) => {
+    setAudioUrl(url);
+  };
 
   return (
     <Box
       sx={{
-        backgroundColor: '#ffff',
-        color: '#fff',
-        padding: '20px',
-        marginTop: '60px',
-        height: '100vh',
+        backgroundColor: "#121212",
+        color: "#fff",
+        padding: "20px",
+        marginTop: "60px",
+        height: "100vh",
         width: { sm: `calc(100% - 310px)`, flexShrink: { sm: 0 } },
-        zIndex: '1',
-        marginLeft: '379px',
-        flexDirection: 'row',
+        zIndex: "1",
+        marginLeft: "379px",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
       }}
     >
       <TextField
@@ -44,22 +47,28 @@ function Search() {
         variant="outlined"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
+        sx={{ marginBottom: "20px", width: "100%"}}
       />
-      <Button variant="contained" onClick={searchMusic}>
+      <Button variant="contained" onClick={handleSearch} sx={{ width: "100%" }}>
         Pesquisar
       </Button>
 
-      {error && <p>{error}</p>}
-
-      <ul>
-        {searchResults.map((result) => (
-          <li key={result.id}>
-            {result.title} - {result.artist}
-          </li>
+      <List sx={{ marginTop: "20px" }}>
+        {results.map((song) => (
+          <ListItem key={song.id} button onClick={() => playAudio(song.audioUrl)}>
+            <ListItemText
+              primary={song.title}
+              secondary={song.artist}
+            />
+          </ListItem>
         ))}
-      </ul>
+      </List>
+
+      {audioUrl && (
+        <ReactAudioPlayer src={audioUrl} autoPlay controls sx={{ marginTop: "20px" }} />
+      )}
     </Box>
   );
-}
+};
 
 export default Dashboard(Search);

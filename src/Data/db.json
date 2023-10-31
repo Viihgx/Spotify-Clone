@@ -7,7 +7,7 @@
       "artist": "The Weeknd, Lana DelRey",
       "album": "Starboy",
       "duration": "3:45",
-      "audioUrl": "http://localhost:3004/Star girl Interlude.mp3"
+      "audioUrl": "http://localhost:3004/audio/Stargir%20Interlude.mp3"
     },
     {
       "id": 2,
@@ -16,7 +16,7 @@
       "artist": "Doja Cat",
       "album": "Starboy",
       "duration": "4:56",
-      "audioUrl": "http://localhost:3004/Doja Cat - Paint The Town Red.mp3"
+      "audioUrl": "http://localhost:3004/audio/Doja%20Cat%20-%20Paint%20The%20Town%20Red.mp3"
     },
     {
       "id": 3,
@@ -25,7 +25,7 @@
       "artist": "Isabel LaRosa",
       "album": "album x",
       "duration": "2:27",
-      "audioUrl": "http://localhost:3004/Isabel-LaRosa-older.mp3"
+      "audioUrl": "http://localhost:3004/audio/Isabel%20LaRosa%20-%20older.mp3"
     },
     {
       "id": 4,
@@ -34,7 +34,7 @@
       "artist": "Lana Del Rey Lana Del Rey",
       "album": "Lana Del Rey",
       "duration": "4:00",
-      "audioUrl": "http://localhost:3004/SaveTube.App - Lana Del Rey - Young and Beautiful (128 kbps).mp3"
+      "audioUrl": "http://localhost:3004/audio/SaveTube.App%20-%20Lana%20Del%20Rey%20-%20Young%20and%20Beautiful%20(128%20kbps).mp3"
     },
     {
       "id": 5,
@@ -43,7 +43,7 @@
       "artist": "The Weeknd",
       "album": "Starboy",
       "duration": "6:00",
-      "audioUrl": "http://localhost:3004/SaveTube.App - After Hours (128 kbps).mp3"
+      "audioUrl": "http://localhost:3004/audio/SaveTube.App%20-%20After%20Hours%20(128%20kbps).mp3"
     },
     {
       "id": 6,
@@ -52,7 +52,7 @@
       "artist": "Japaozin",
       "album": "Japao",
       "duration": "4:56",
-      "audioUrl": "http://localhost:3004/japaozin-carinha-de-nenem.mp3"
+      "audioUrl": "http://localhost:3004/audio/japaozin-carinha-de-nenem.mp3"
     }
   ],
   "playlists": [

@@ -10,7 +10,11 @@ const fs = require('fs'); // Adicione esta linha
 const path = require('path');
 
 app.use(cors());
+
 app.use(bodyParser.json());
+
+app.use('/audio', express.static(path.join(__dirname, './Audio')));
+
 
 // Rota raiz
 app.get('/', (req, res) => {
