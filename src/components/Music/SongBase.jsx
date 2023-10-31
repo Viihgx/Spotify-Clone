@@ -1,7 +1,7 @@
 import Music1 from '../../Audio/SaveTube.App - Lana Del Rey - Young and Beautiful (128 kbps).mp3';
-import Music2 from '../../Audio/Doja-Cat-Paint-The-Town-Red.mp3';
+import Music2 from '../../Audio/Doja Cat - Paint The Town Red.mp3';
 import Music3 from '../../Audio/Isabel-LaRosa-older.mp3';
-import Music4 from '../../Audio/The-Weeknd-Stargirl-Interlude-ft.-LanaDelRey.mp3';
+import Music4 from '../../Audio/Star girl Interlude.mp3';
 import Music5 from '../../Audio/SaveTube.App - After Hours (128 kbps).mp3';
 import Music6 from '../../Audio/japaozin-carinha-de-nenem.mp3';
 

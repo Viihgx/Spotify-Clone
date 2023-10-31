@@ -29,7 +29,7 @@ const Sidebar = () => {
             <p> Início </p>
           </Link>
         </Link>
-        <Link to="/SeachBar"
+        <Link to="/search"
           style={{
             display: "flex",
             alignItems: "center",
@@ -40,7 +40,7 @@ const Sidebar = () => {
             fontWeight: 700,
           }}
         >
-          <CiSearch
+          <CiSearch 
             style={{ height: "25px", width: "24px", marginRight: "15px", fill: '#b3b3b3' }}
           />
           <p style={{ textDecoration: "none", color: "#b3b3b3", fontSize: '1rem' }}>Buscar</p>

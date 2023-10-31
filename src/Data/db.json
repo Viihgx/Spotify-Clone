@@ -1,0 +1,106 @@
+{
+  "songs": [
+    {
+      "id": 1,
+      "thumb": "https://icongresso-x.s3-sa-east-1.amazonaws.com/demo/activity-scheduling/169635083171365.jpeg",
+      "title": "Stargir Interlude",
+      "artist": "The Weeknd, Lana DelRey",
+      "album": "Starboy",
+      "duration": "3:45",
+      "audioUrl": "http://localhost:3004/Star girl Interlude.mp3"
+    },
+    {
+      "id": 2,
+      "thumb": "https://icongresso-x.s3-sa-east-1.amazonaws.com/demo/activity-scheduling/169635083171365.jpeg",
+      "title": "Doja Cat - Paint The Town Red",
+      "artist": "Doja Cat",
+      "album": "Starboy",
+      "duration": "4:56",
+      "audioUrl": "http://localhost:3004/Doja Cat - Paint The Town Red.mp3"
+    },
+    {
+      "id": 3,
+      "thumb": "https://icongresso-x.s3-sa-east-1.amazonaws.com/demo/activity-scheduling/169635083171365.jpeg",
+      "title": "Isabel LaRosa - older",
+      "artist": "Isabel LaRosa",
+      "album": "album x",
+      "duration": "2:27",
+      "audioUrl": "http://localhost:3004/Isabel-LaRosa-older.mp3"
+    },
+    {
+      "id": 4,
+      "thumb": "https://icongresso-x.s3-sa-east-1.amazonaws.com/demo/activity-scheduling/169635083171365.jpeg",
+      "title": "Lana Del Rey - Young and Beautiful",
+      "artist": "Lana Del Rey Lana Del Rey",
+      "album": "Lana Del Rey",
+      "duration": "4:00",
+      "audioUrl": "http://localhost:3004/SaveTube.App - Lana Del Rey - Young and Beautiful (128 kbps).mp3"
+    },
+    {
+      "id": 5,
+      "thumb": "https://icongresso-x.s3-sa-east-1.amazonaws.com/demo/activity-scheduling/169635083171365.jpeg",
+      "title": "After Hours",
+      "artist": "The Weeknd",
+      "album": "Starboy",
+      "duration": "6:00",
+      "audioUrl": "http://localhost:3004/SaveTube.App - After Hours (128 kbps).mp3"
+    },
+    {
+      "id": 6,
+      "thumb": "https://icongresso-x.s3-sa-east-1.amazonaws.com/demo/activity-scheduling/169635083171365.jpeg",
+      "title": "Carinha de Neném",
+      "artist": "Japaozin",
+      "album": "Japao",
+      "duration": "4:56",
+      "audioUrl": "http://localhost:3004/japaozin-carinha-de-nenem.mp3"
+    }
+  ],
+  "playlists": [
+    {
+      "id": 1,
+      "thumb": "https://icongresso-x.s3-sa-east-1.amazonaws.com/demo/activity-scheduling/169635083171365.jpeg",
+      "title": "Playlist 0",
+      "description": "Descrição Playlist 0",
+      "songs": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "title": "",
+      "description": "",
+      "selectedSongs": [
+        1,
+        2
+      ],
+      "id": 2
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "seu_nome_de_usuário",
+      "email": "seu_email@example.com",
+      "password": "senha_criptografada"
+    },
+    {
+      "username": "tes3e5",
+      "email": "te2s2@example.com",
+      "password": "$2b$10$kHe0cmR/7VunFUeVXa6JVu4/7Ut1a9/wz/k305Mx/GgAU2efJwTVy"
+    },
+    {
+      "username": "te1432s3e5",
+      "email": "te34342s2@example.com",
+      "password": "$2b$10$7BkNmQZJsO4FuhUzMHNhI.NJUViA9.wigYd6VdFXZIKF47Gh33q.G"
+    },
+    {
+      "username": "teer1432s3e5",
+      "email": "te343r42s2@example.com",
+      "password": "$2b$10$NGZWXLXhETuI9mpjOaMQY.pHn1fdOLvFZt2TSSo7cFFppek1ZSBUS"
+    }
+  ]
+}

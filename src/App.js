@@ -3,14 +3,12 @@ import Home from './routes/Home';
 import Faq from './routes/Faq/Faq';
 import Playlist from './components/Playlist/Playlist';
 import SearchBar from './SearchBar/SearchBar';
-
-// import Sidebar from './components/SideBar/Sidebar';
-// import Principal from './components/Principal/Principal';
+import AddPlaylist from './routes/AddPlaylist/AddPlaylist'
+import Search from './routes/Search/Search';
 
 function App() {
   return (
     <>
-    
       <Routes>
         <Route path="/" element={<Home />} />
         {/* <Route path="/principal" element={<Principal />} > */}
@@ -19,8 +17,10 @@ function App() {
           <Route path="faq" element={<Faq />} />
           <Route path="playlist" element={<Playlist />} />
           <Route path="SearchBar" element={<SearchBar />} />
-        
+          <Route path="search" element={<Search />} />
+          <Route path="AddPlaylist" element={<AddPlaylist />} />
       </Routes>
+
     </>
   );
 }
