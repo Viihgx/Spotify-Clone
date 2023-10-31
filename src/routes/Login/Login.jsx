@@ -7,7 +7,7 @@ function Login() {
 
   const handleEmailBlur = () => {
     if (!email.includes('@')) {
-      setEmailError('Este e-mail é inválido. Certifica-te de que tem este formato: exemplo@email.com.');
+      setEmailError('Este e-mail é inválido. Certifique-se de que tem este formato: exemplo@email.com.');
     } else {
       setEmailError('');
     }
@@ -66,7 +66,7 @@ function Login() {
       <>
         <button className="btn-google" type="button" onClick={(() => 
             window.location.href = '/Register')}>
-          Cadastrar-se
+          Cadastrar-se!
         </button>
       </>
       </form>

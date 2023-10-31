@@ -104,7 +104,7 @@ function Navbar() {
             window.location.href = '/Login'
           })}>
           <AccountCircleOutlinedIcon sx={{ fontSize: '1.8rem', marginRight: '1rem' }} /> 
-          Logout
+          Log out
           {/* <Link
             to="/Login"
             style={{ textDecoration: 'none', textTransform: 'none', color: 'white', marginLeft: '10px' }}

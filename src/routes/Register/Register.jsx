@@ -69,12 +69,12 @@ function Register() {
         </div>
       <>
         <button className="btn-google" type="button" onClick={handleRegister}>
-          Registra-te com o Google
+          Registre-se com o Google
         </button>
       </>
       <>
         <button className="btn-face-register" type="button" onClick={handleRegister}>
-          Registra-te com o Facebook
+        Registre-se com o Facebook
         </button>
       </>
       </form>
