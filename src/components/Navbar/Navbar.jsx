@@ -98,7 +98,19 @@ function Navbar() {
             <ArrowCircleDownIcon style={{marginRight: "0.3rem", fontSize: "21px"}}/> 
             Instalar aplicativo
           </Button>
-            <AccountCircleOutlinedIcon sx={{ fontSize: '1.8rem', marginRight: '1rem' }} />  
+
+          <Button>
+          <AccountCircleOutlinedIcon sx={{ fontSize: '1.8rem', marginRight: '1rem' }} /> 
+          <Link
+            to="/Login"
+            style={{ textDecoration: 'none', textTransform: 'none', color: 'white', marginLeft: '10px' }}
+     
+            rel="noopener noreferrer"
+          >
+          Logout
+          </Link>
+          </Button>
+
         </Box>
 
       </Toolbar>

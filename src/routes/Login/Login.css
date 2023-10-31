@@ -1,0 +1,77 @@
+.header-login{
+    padding: 90px 0 0 0;
+  }
+  
+  .login-container {
+      background-color: #242424;
+      color: white;
+      padding: 0 0 0 0;
+      width: 300px;
+      height: 100%;
+      margin: 0 auto;
+      text-align: center;
+      border-radius: 5px;
+    }
+
+    .img-login {
+        width: 30%;
+        height: 30%;
+    }
+  
+    .error-text-login {
+      color: rgb(185, 12, 12);
+    }
+  
+    .title-login {
+      font-size: 200%;
+      text-align: left;
+      font-weight: bolder;
+      color: white;
+  
+    }
+  
+    .phone-number-login{
+      color: #1DB954;
+      text-decoration: underline;
+      font-size:small;
+    }
+    
+    .form-group-login {
+      margin: 10% 0%;
+      padding: 0% 5% 0% 0%;
+      text-align: left;
+    }
+  
+    .divider-txt-login{
+      color: grey;
+    }
+  
+    .divider-login {
+      padding: 15px 0;
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    .btn-next-login {
+      background-color:#1DB954;
+      color: white;
+    }
+  
+    .btn-google-login {
+      background-color:black;
+      color: white;
+      margin: 1%;
+    }
+  
+    .btn-face-login {
+      background-color:black;
+      color: white;
+      margin: 1%;
+    }
+
+    
+    .logo-login {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
