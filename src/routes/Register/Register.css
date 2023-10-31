@@ -1,0 +1,77 @@
+.header-register{
+    padding: 90px 0 0 0;
+  }
+  
+  .register-container {
+      background-color: #242424;
+      color: white;
+      padding: 0 0 0 0;
+      width: 300px;
+      height: 100%;
+      margin: 0 auto;
+      text-align: center;
+      border-radius: 5px;
+    }
+
+    .img-register {
+        width: 30%;
+        height: 30%;
+    }
+  
+    .error-text-register {
+      color: rgb(185, 12, 12);
+    }
+  
+    .title-register {
+      font-size: 200%;
+      text-align: left;
+      font-weight: bolder;
+      color: white;
+  
+    }
+  
+    .phone-number-register{
+      color: #1DB954;
+      text-decoration: underline;
+      font-size:small;
+    }
+    
+    .form-group-register {
+      margin: 10% 0%;
+      padding: 0% 5% 0% 0%;
+      text-align: left;
+    }
+  
+    .divider-txt-register{
+      color: grey;
+    }
+  
+    .divider-register {
+      padding: 15px 0;
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    .btn-next-register {
+      background-color:#1DB954;
+      color: white;
+    }
+  
+    .btn-google-register {
+      background-color:black;
+      color: white;
+      margin: 1%;
+    }
+  
+    .btn-face-register {
+      background-color:black;
+      color: white;
+      margin: 1%;
+    }
+
+    
+    .logo-register {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }

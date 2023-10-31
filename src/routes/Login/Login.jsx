@@ -27,10 +27,11 @@ function Login() {
       <div className="header-login">
         <img className="img-login" src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_White.png" alt="Logo" />
       </div>
-      <div className='title-login'>Registre-se para começar a ouvir</div>
-      <form>
+      <div className='title-login'>Entrar no Spotify</div>
+      <form><p></p>
         <div className="form-group">
           <label>Endereço de e-mail</label>
+          <p></p>
           <input
             type="text"
             value={email}
@@ -40,11 +41,18 @@ function Login() {
           />
           {emailError && <p className="error-text-login">{emailError}</p>}
           <p></p>
+          <label>Senha</label>
+          <p></p>
+          <input
+            type="password"
+          />
+          <p></p>
           <div className='phone-number-login'>Utiliza antes o número de telefone.</div>
         </div>
         <p></p><p></p>
-        <button className="btn-next-login" type="button" onClick={handleLogin}>
-          Próximo
+        <button className="btn-next-login" type="button" onClick={(() =>
+            window.location.href = '/')}>
+          Entrar
         </button>
         <div className='divider-login'>
           <div className='divider-txt-login'>
@@ -56,13 +64,9 @@ function Login() {
           </div>
         </div>
       <>
-        <button className="btn-google" type="button" onClick={handleLogin}>
-          Registra-te com o Google
-        </button>
-      </>
-      <>
-        <button className="btn-face-login" type="button" onClick={handleLogin}>
-          Registra-te com o Facebook
+        <button className="btn-google" type="button" onClick={(() => 
+            window.location.href = '/Register')}>
+          Cadastrar-se
         </button>
       </>
       </form>

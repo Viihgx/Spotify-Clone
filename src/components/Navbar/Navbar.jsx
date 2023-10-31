@@ -99,16 +99,19 @@ function Navbar() {
             Instalar aplicativo
           </Button>
 
-          <Button>
+          <Button onClick={(() => {
+            // localStorage.deleteItem('session')
+            window.location.href = '/Login'
+          })}>
           <AccountCircleOutlinedIcon sx={{ fontSize: '1.8rem', marginRight: '1rem' }} /> 
-          <Link
+          Logout
+          {/* <Link
             to="/Login"
             style={{ textDecoration: 'none', textTransform: 'none', color: 'white', marginLeft: '10px' }}
      
             rel="noopener noreferrer"
           >
-          Logout
-          </Link>
+          </Link> */}
           </Button>
 
         </Box>
