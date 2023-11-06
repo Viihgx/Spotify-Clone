@@ -1,93 +1,104 @@
 import React, { useState, useEffect } from 'react';
-import Dashboard from '../../components/Layout/Dashboard';
-import { Box, Button, TextField, Checkbox, FormControlLabel, FormGroup } from '@mui/material';
 import axios from 'axios';
-import { usePlaylist } from '../../PlaylistContext/PlaylistContext';
+import { Box, TextField, Button, List, ListItem, ListItemText, Typography } from '@mui/material';
+import Dashboard from '../../components/Layout/Dashboard';
 
-function AddPlaylist() {
-  const { playlists, setPlaylists } = usePlaylist(); // Obtenha playlists do contexto
-
-  const [playlistData, setPlaylistData] = useState({
-    title: '',
-    description: '',
-    selectedSongs: [],
-  });
-
+const AddPlaylist = () => {
   const [songs, setSongs] = useState([]);
+  const [playlistSongs, setPlaylistSongs] = useState([]);
+  const [filteredSongs, setFilteredSongs] = useState([]);
+  const [playlistName, setPlaylistName] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
-    axios.get('http://localhost:3000/songs')
+    // Faça uma solicitação para obter a lista de músicas disponíveis no servidor
+    axios.get('http://localhost:3004/songs')
       .then((response) => {
         setSongs(response.data);
+        setFilteredSongs(response.data);
       })
       .catch((error) => {
-        console.error('Erro ao buscar músicas:', error);
+        console.error('Erro ao obter músicas', error);
       });
   }, []);
 
-  const handleCreatePlaylist = async () => {
-    try {
-      await axios.post('http://localhost:3004/playlists', playlistData);
+  const handleAddSong = (song) => {
+    setPlaylistSongs([...playlistSongs, song]);
+  };
 
-      // Adicione a playlist ao estado global
-      setPlaylists([...playlists, playlistData]);
-
-      // Lógica para lidar com o sucesso da criação da playlist
-      console.log('Playlist criada com sucesso!');
-    } catch (error) {
-      // Lógica para lidar com erros de criação de playlists
-      console.error('Erro ao criar a playlist:', error);
-    }
-  }
-
-  const handleSongSelection = (songId, selected) => {
-    if (selected) {
-      setPlaylistData({
-        ...playlistData,
-        selectedSongs: [...playlistData.selectedSongs, songId],
+  const handleCreatePlaylist = () => {
+    // Crie uma nova playlist no servidor com o nome e as músicas selecionadas
+    axios.post('http://localhost:3004/playlists', {
+      title: playlistName,
+      songs: playlistSongs.map((song) => song.id),
+    })
+      .then((response) => {
+        // A playlist foi criada com sucesso, você pode redirecionar o usuário para outra página, se necessário.
+        console.log('Playlist criada:', response.data);
+        setPlaylistName(''); // Limpa o nome da playlist
+        setPlaylistSongs([]); // Limpa as músicas selecionadas
+      })
+      .catch((error) => {
+        console.error('Erro ao criar playlist', error);
       });
-    } else {
-      setPlaylistData({
-        ...playlistData,
-        selectedSongs: playlistData.selectedSongs.filter((id) => id !== songId),
-      });
-    }
+  };
+
+  const handleSearch = () => {
+    // Filtrar músicas com base na consulta de pesquisa
+    const filtered = songs.filter((song) =>
+      song.title.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    setFilteredSongs(filtered);
   };
 
   return (
-    <Box className="box-container">
-      <form onSubmit={handleCreatePlaylist}>
-        <TextField
-          label="Título da playlist"
-          value={playlistData.title}
-          onChange={(e) => setPlaylistData({ ...playlistData, title: e.target.value })}
-        />
-        <TextField
-          label="Descrição da playlist"
-          value={playlistData.description}
-          onChange={(e) => setPlaylistData({ ...playlistData, description: e.target.value })}
-        />
-        <FormGroup>
-          {songs.map((song) => (
-            <FormControlLabel
-              key={song.id}
-              control={
-                <Checkbox
-                  checked={playlistData.selectedSongs.includes(song.id)}
-                  onChange={(e) => handleSongSelection(song.id, e.target.checked)}
-                  name={`song-${song.id}`}
-                />
-              }
-              label={song.title}
-            />
-          ))}
-        </FormGroup>
-        <Button variant="contained" color="primary" type="submit">
-          Criar playlist
-        </Button>
-      </form>
+    <Box sx={{
+      backgroundColor: "#121212",
+      color: "#fff",
+      padding: "20px",
+      marginTop: "60px",
+      height: "100vh",
+      width: { sm: `calc(100% - 310px)`, flexShrink: { sm: 0 } },
+      zIndex: "1",
+      marginLeft: "379px",
+      flexDirection: 'row',
+    }}>
+      <TextField
+        label="Nome da Playlist"
+        variant="outlined"
+        value={playlistName}
+        onChange={(e) => setPlaylistName(e.target.value)}
+      />
+      <TextField
+        label="Pesquisar Música"
+        variant="outlined"
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+      />
+      <Button variant="contained" onClick={handleSearch}>
+        Pesquisar
+      </Button>
+      <Typography variant="h6" sx={{ marginTop: '20px' }}>Músicas Selecionadas:</Typography>
+      <List>
+        {playlistSongs.map((song) => (
+          <ListItem key={song.id}>
+            <ListItemText primary={song.title} secondary={song.artist} />
+          </ListItem>
+        ))}
+      </List>
+      <Typography variant="h6" sx={{ marginTop: '20px' }}>Resultado da Pesquisa:</Typography>
+      <List>
+        {filteredSongs.map((song) => (
+          <ListItem key={song.id} button onClick={() => handleAddSong(song)}>
+            <ListItemText primary={song.title} secondary={song.artist} />
+          </ListItem>
+        ))}
+      </List>
+      <Button variant="contained" onClick={handleCreatePlaylist}>
+        Criar Playlist
+      </Button>
     </Box>
   );
-}
+};
 
 export default Dashboard(AddPlaylist);

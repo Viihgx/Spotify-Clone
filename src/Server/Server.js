@@ -1,20 +1,24 @@
 const express = require('express');
 const cors = require('cors');
-
 const app = express();
 const port = 3004;
 const bodyParser = require('body-parser');
 const mockData = require('../Data/db.json');
 const bcrypt = require('bcrypt');
-const fs = require('fs'); // Adicione esta linha
+const fs = require('fs');
 const path = require('path');
 
 app.use(cors());
-
 app.use(bodyParser.json());
 
 app.use('/audio', express.static(path.join(__dirname, './Audio')));
 
+// Lista de tokens JWT válidos
+const validTokens = new Set();
+
+const jwt = require('jsonwebtoken');
+// Chave secreta para assinar tokens JWT
+const secretKey = 'your-secret-key';
 
 // Rota raiz
 app.get('/', (req, res) => {
@@ -81,6 +85,39 @@ app.post('/signup', (req, res) => {
   });
 });
 
+// Rota para fazer login e gerar um token JWT
+app.post('/login', (req, res) => {
+  const { username, password } = req.body;
+
+  // Verifique as credenciais e autentique o usuário
+  const user = mockData.users.find((u) => u.username === username);
+
+  if (user && bcrypt.compareSync(password, user.password)) {
+    // Gere um token JWT para o usuário
+    const payload = { username: user.username, userId: user.id }; // Dados que deseja incluir no token
+    const token = jwt.sign(payload, secretKey, { expiresIn: '1h' });
+
+    // Adicione o token à lista de tokens válidos
+    validTokens.add(token);
+
+    res.json({ message: 'Login bem-sucedido', token });
+  } else {
+    res.status(401).json({ error: 'Credenciais inválidas' });
+  }
+});
+
+// Rota para fazer logout
+app.post('/logout', (req, res) => {
+  const token = req.headers.authorization;
+
+  if (token) {
+    validTokens.delete(token); // Remove o token da lista de tokens válidos
+    res.json({ message: 'Logout realizado com sucesso' });
+  } else {
+    res.status(400).json({ error: 'Token não fornecido' });
+  }
+});
+
 
 // Rota para listar todos os usuários
 app.get('/users', (req, res) => {
@@ -117,7 +154,7 @@ app.post('/playlists', (req, res) => {
     id: mockData.playlists.length + 1,
     title,
     description: description || '',
-    songs: songs || [],
+    songs: songs || [], // Aqui você pode adicionar as músicas à playlist
   };
 
   mockData.playlists.push(newPlaylist);
@@ -126,6 +163,74 @@ app.post('/playlists', (req, res) => {
 
   res.status(201).json({ message: 'Playlist criada com sucesso', playlist: newPlaylist });
 });
+
+// Rota para adicionar uma música a uma playlist existente
+app.post('/playlists/:id/add-song', (req, res) => {
+  const playlistId = parseInt(req.params.id, 10);
+  const { songId } = req.body;
+
+  const playlist = mockData.playlists.find((p) => p.id === playlistId);
+  const song = mockData.songs.find((s) => s.id === songId);
+
+  if (!playlist) {
+    return res.status(404).json({ error: 'Playlist não encontrada' });
+  }
+
+  if (!song) {
+    return res.status(404).json({ error: 'Música não encontrada' });
+  }
+
+  playlist.songs.push(song.id);
+
+  // Atualize o arquivo JSON de dados aqui, similar à rota de cadastro de usuário.
+
+  res.json({ message: 'Música adicionada à playlist com sucesso' });
+});
+// Rota para adicionar uma nova playlist
+app.post('/playlists', (req, res) => {
+  const { title, description, songs } = req.body;
+
+  if (!title) {
+    return res.status(400).json({ error: 'O título da playlist é obrigatório' });
+  }
+
+  const newPlaylist = {
+    id: mockData.playlists.length + 1,
+    title,
+    description: description || '',
+    songs: songs || [], // Aqui você pode adicionar as músicas à playlist
+  };
+
+  mockData.playlists.push(newPlaylist);
+
+  // Atualize o arquivo JSON de dados aqui, similar à rota de cadastro de usuário.
+
+  res.status(201).json({ message: 'Playlist criada com sucesso', playlist: newPlaylist });
+});
+
+// Rota para adicionar uma música a uma playlist existente
+app.post('/playlists/:id/add-song', (req, res) => {
+  const playlistId = parseInt(req.params.id, 10);
+  const { songId } = req.body;
+
+  const playlist = mockData.playlists.find((p) => p.id === playlistId);
+  const song = mockData.songs.find((s) => s.id === songId);
+
+  if (!playlist) {
+    return res.status(404).json({ error: 'Playlist não encontrada' });
+  }
+
+  if (!song) {
+    return res.status(404).json({ error: 'Música não encontrada' });
+  }
+
+  playlist.songs.push(song.id);
+
+  // Atualize o arquivo JSON de dados aqui, similar à rota de cadastro de usuário.
+
+  res.json({ message: 'Música adicionada à playlist com sucesso' });
+});
+
 
 // Rota para remover uma playlist
 app.delete('/playlists/:id', (req, res) => {

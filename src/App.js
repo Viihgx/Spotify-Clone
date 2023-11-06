@@ -4,6 +4,9 @@ import Faq from './routes/Faq/Faq';
 import Playlist from './components/Playlist/Playlist';
 import AddPlaylist from './routes/AddPlaylist/AddPlaylist'
 import Search from './routes/Search/Search';
+import Register from './routes/Register/Register';
+import Login from './routes/Login/Login';
+
 
 function App() {
   return (
@@ -17,6 +20,8 @@ function App() {
           <Route path="playlist" element={<Playlist />} />
           <Route path="search" element={<Search />} />
           <Route path="AddPlaylist" element={<AddPlaylist />} />
+          <Route path="Login" element={<Login />} />
+          <Route path="Register" element={<Register />} />
       </Routes>
 
     </>

@@ -4,8 +4,23 @@ import AddIcon from "@mui/icons-material/Add";
 import React from "react";
 import "./Library.css";
 import { Link } from "react-router-dom";
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const Library = () => {
+  const [playlists, setPlaylists] = useState([]);
+
+  useEffect(() => {
+    // Faça uma solicitação para obter a lista de playlists disponíveis no servidor
+    axios.get('http://localhost:3004/playlists')
+      .then((response) => {
+        setPlaylists(response.data);
+      })
+      .catch((error) => {
+        console.error('Erro ao obter playlists', error);
+      });
+  }, []);
+
   return (
     <Box className="box-main">
         <Box display={"flex"} color={"white"}>
@@ -22,19 +37,20 @@ const Library = () => {
           </Link>
         </Box>
       </Box>
-      <Box className="playlists"
-        sx={{
-          padding: "16px 20px",
-          backgroundColor: "#242424",
-          borderRadius: "8px",
-          width: "86%",
-          cursor: 'default',
-          marginLeft: "5px",
-          marginTop: '10px',
-        }}
-      >
-        
-
+      <Box className="playlists" sx={{
+        padding: "16px 20px",
+        backgroundColor: "#242424",
+        borderRadius: "8px",
+        width: "86%",
+        cursor: 'default',
+        marginLeft: "5px",
+        marginTop: '10px',
+      }}>
+        {playlists.map((playlist) => (
+          <div key={playlist.id}>
+            <Typography>{playlist.title}</Typography>
+          </div>
+        ))}
       </Box>
       <Box
         sx={{
