@@ -13,7 +13,6 @@ root.render(
 );
 
 
-
 // const router = createBrowserRouter([
 //   {
 //     path: "/",
@@ -23,4 +22,5 @@ root.render(
 //     path: "faq",
 //     element: <Faq/>
 //   }
+// 
 // ])

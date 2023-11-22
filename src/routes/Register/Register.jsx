@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Register.css';
-
+//
 function Register() {
   const [email, setEmail] = useState('');
   const [emailError, setEmailError] = useState('');
@@ -25,12 +25,14 @@ function Register() {
 
     <div className="register-container">
       <div className="header-register">
-        <img className="img-register" src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_White.png" alt="Logo" />
+        <img className="img-register" src="https://superaprendiz.com.br/aprendiz/assets/img/theme/user.png" alt="Logo" />
       </div>
       <div className='title-register'>Registre-se para começar a ouvir</div>
       <form><p></p>
         <div className="form-group">
           <label>Endereço de e-mail</label>
+          <br></br>
+          <br></br>
           <input
             type="text"
             value={email}

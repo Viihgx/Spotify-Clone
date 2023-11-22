@@ -6,7 +6,8 @@ import AddPlaylist from './routes/AddPlaylist/AddPlaylist'
 import Search from './routes/Search/Search';
 import Register from './routes/Register/Register';
 import Login from './routes/Login/Login';
-
+import Profile from './routes/Profile/Profile'
+import EditProfile from './routes/EditProfile/EditProfile';
 
 function App() {
   return (
@@ -22,6 +23,8 @@ function App() {
           <Route path="AddPlaylist" element={<AddPlaylist />} />
           <Route path="Login" element={<Login />} />
           <Route path="Register" element={<Register />} />
+          <Route path="Profile" element={<Profile />} />
+          <Route path="EditProfile" element={<EditProfile />} />
       </Routes>
 
     </>
