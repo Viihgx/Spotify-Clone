@@ -31,6 +31,14 @@ function EditProfile() {
       <p></p>
       <div className='title-editprofile'>Marília Barbosa </div>
           <br></br>
+          <label>Editar nome</label>
+          <p></p>
+          <input
+            type="text"
+          />
+          <p></p>
+          <button>Confirmar</button>
+          <p></p>
       <div className="form-group">
           <label>Editar endereço de e-mail</label>
           <p></p>
@@ -51,7 +59,7 @@ function EditProfile() {
             type="password"
           />
           <p></p>
-          <label>Confirmar Senha</label>
+          <label>Confirmar senha</label>
           <p></p>
           <input
             type="password"

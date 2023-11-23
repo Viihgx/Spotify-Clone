@@ -150,7 +150,7 @@ function Navbar() {
                 'aria-labelledby': 'basic-button',
               }}
             >
-              <Link to="#"
+              <Link to="/Profile"
               style={{textDecoration: 'none', textTransform: 'none', color: 'black'}}>
               <MenuItem onClick={handleClose}>Meu perfil</MenuItem>
               </Link>

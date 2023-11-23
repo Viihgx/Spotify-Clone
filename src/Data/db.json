@@ -62,7 +62,6 @@
       "title": "Playlist 0",
       "description": "Descrição Playlist 0",
       "songs": [
-        1,
         2,
         3,
         4,
@@ -82,12 +81,6 @@
   ],
   "users": [
     {
-      "id": 1,
-      "username": "seu_nome_de_usuário",
-      "email": "seu_email@example.com",
-      "password": "senha_criptografada"
-    },
-    {
       "username": "tes3e5",
       "email": "te2s2@example.com",
       "password": "$2b$10$kHe0cmR/7VunFUeVXa6JVu4/7Ut1a9/wz/k305Mx/GgAU2efJwTVy"
@@ -101,6 +94,17 @@
       "username": "teer1432s3e5",
       "email": "te343r42s2@example.com",
       "password": "$2b$10$NGZWXLXhETuI9mpjOaMQY.pHn1fdOLvFZt2TSSo7cFFppek1ZSBUS"
+    },
+    {
+      "username": "test1",
+      "email": "test1@email.pocotom",
+      "password": "$2b$10$bL/c4d/5WvjIzJ2m7ruJPeX392yv.FHc68LLjNTDbFKkGuFmM3aye"
+    },
+    {
+      "id": "0d21899b-635e-4898-87d8-1a9c07ea7287",
+      "username": "testnovo",
+      "email": "testnovo@email.com",
+      "password": "$2b$10$R8DU0mz7dJy0dlTDabJnBuIVs4rfrzMhUwQm6EtLCqgS0LSdsfmIe"
     }
   ]
 }

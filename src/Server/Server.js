@@ -7,6 +7,7 @@ const mockData = require('../Data/db.json');
 const bcrypt = require('bcrypt');
 const fs = require('fs');
 const path = require('path');
+const { v4: uuidv4 } = require('uuid');
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -33,6 +34,20 @@ app.get('/songs', (req, res) => {
 // Rota para obter as playlists
 app.get('/playlists', (req, res) => {
   res.json(mockData.playlists);
+});
+
+// Obter uma playlist pelo id dela
+app.get('/playlists/:id', (req, res) => {
+  const playlistId = parseInt(req.params.id, 10);
+
+  // Encontrar a playlist com o ID correspondente
+  const playlist = mockData.playlists.find((p) => p.id === playlistId);
+
+  if (!playlist) {
+    return res.status(404).json({ error: 'Playlist não encontrada' });
+  }
+
+  res.json(playlist);
 });
 
 // Rota de cadastro de usuário
@@ -62,8 +77,12 @@ app.post('/signup', (req, res) => {
       return res.status(500).json({ error: 'Erro interno' });
     }
 
+    // Geração de ID único usando UUID
+    const userId = uuidv4();
+
     // Salve as informações do usuário no seu sistema de armazenamento (neste caso, o arquivo JSON de mock)
     const newUser = {
+      id: userId,
       username,
       email,
       password: hashedPassword,
@@ -83,6 +102,73 @@ app.post('/signup', (req, res) => {
       .status(201)
       .json({ message: 'Cadastro bem-sucedido', user: newUser });
   });
+});
+
+// Deleta um usuário pelo id
+
+app.delete('/users/:id', (req, res) => {
+  const userId = parseInt(req.params.id, 10);
+  const userIndex = mockData.playlists.findIndex((user) => user.id === userId);
+
+  if (userIndex === -1) {
+    return res.status(404).json({ error: 'Usuário não encontrado' });
+  }
+
+  mockData.users.splice(userIndex, 1);
+
+  res.json({ message: 'Usuário removido com sucesso' });
+});
+
+// Edita usuário pelo id
+
+app.patch('/users/:id', (req, res) => {
+  const userId = req.params.id;
+  const { username, email, password } = req.body;
+
+  // Encontrar o índice do usuário no array
+  const userIndex = mockData.users.findIndex((user) => user.id === userId);
+
+  if (userIndex === -1) {
+    return res.status(404).json({ error: 'Usuário não encontrado' });
+  }
+
+  // Atualizar os campos, se fornecidos
+  if (username) {
+    mockData.users[userIndex].username = username;
+  }
+
+  if (email) {
+    mockData.users[userIndex].email = email;
+  }
+
+  if (password) {
+    // Criptografar a nova senha, se fornecida
+    bcrypt.hash(password, 10, (err, hashedPassword) => {
+      if (err) {
+        console.error('Erro ao criptografar a senha');
+        return res.status(500).json({ error: 'Erro interno' });
+      }
+
+      mockData.users[userIndex].password = hashedPassword;
+
+      // Escrever os dados atualizados no arquivo JSON (ou no seu sistema de armazenamento)
+      fs.writeFileSync(
+        path.join(__dirname, '../Data/db.json'),
+        JSON.stringify(mockData, null, 2)
+      );
+
+      res.json({ message: 'Usuário editado com sucesso', user: mockData.users[userIndex] });
+    });
+  } else {
+    // Se não houver senha para editar, apenas salvar os outros campos
+    // Escrever os dados atualizados no arquivo JSON (ou no seu sistema de armazenamento)
+    fs.writeFileSync(
+      path.join(__dirname, '../Data/db.json'),
+      JSON.stringify(mockData, null, 2)
+    );
+
+    res.json({ message: 'Usuário editado com sucesso', user: mockData.users[userIndex] });
+  }
 });
 
 // Rota para fazer login e gerar um token JWT
@@ -186,6 +272,7 @@ app.post('/playlists/:id/add-song', (req, res) => {
 
   res.json({ message: 'Música adicionada à playlist com sucesso' });
 });
+
 // Rota para adicionar uma nova playlist
 app.post('/playlists', (req, res) => {
   const { title, description, songs } = req.body;
@@ -231,6 +318,36 @@ app.post('/playlists/:id/add-song', (req, res) => {
   res.json({ message: 'Música adicionada à playlist com sucesso' });
 });
 
+// Remover uma música de uma playlist 
+app.patch('/playlists/:id/remove-song', (req, res) => {
+  const playlistId = parseInt(req.params.id, 10);
+  const { songId } = req.body;
+
+  // Encontrar a playlist com o ID correspondente
+  const playlist = mockData.playlists.find((p) => p.id === playlistId);
+
+  if (!playlist) {
+    return res.status(404).json({ error: 'Playlist não encontrada' });
+  }
+
+  // Encontrar o índice da música na playlist
+  const songIndex = playlist.songs.indexOf(songId);
+
+  if (songIndex === -1) {
+    return res.status(404).json({ error: 'Música não encontrada na playlist' });
+  }
+
+  // Remover a música da playlist
+  playlist.songs.splice(songIndex, 1);
+
+  // Atualizar o arquivo JSON de dados
+  fs.writeFileSync(
+    path.join(__dirname, '../Data/db.json'),
+    JSON.stringify(mockData, null, 2)
+  );
+
+  res.json({ message: 'Música removida da playlist com sucesso', playlist });
+});
 
 // Rota para remover uma playlist
 app.delete('/playlists/:id', (req, res) => {
