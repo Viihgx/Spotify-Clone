@@ -42,7 +42,7 @@ function Login() {
         <p></p><p></p>
         <button className="btn-next-login" type="button" onClick={(() => {
             // localStorage.deleteItem('session')
-            window.location.href = '/'
+            window.location.href = '/Home'
           })}>
           Entrar
         </button>
